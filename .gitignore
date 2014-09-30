@@ -1,0 +1,8 @@
+#ignore everything in _scss
+_scss/*
+
+#except the scss folder
+!_scss/scss
+
+#ignore .zip files
+*.zip

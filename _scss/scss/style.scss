@@ -1,0 +1,144 @@
+////////////////////////////////////////////////////////////
+// SASS RESETS
+////////////////////////////////////////////////////////////
+@import "compass/css3";
+
+
+////////////////////////////////////////////////////////////
+// SASS VARIABLES
+////////////////////////////////////////////////////////////
+
+// fonts
+$font-primary : "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-secondary : 'Roboto Slab', serif;
+
+// line heights
+$line-height-text : 1.5;
+$line-height-small : 1.2;
+
+// colours
+$neutral : rgb(120,120,120);
+
+$accent : rgb(40,170,220);
+$accent-dark : darken($accent, 20%);
+
+// simple alert colours
+$sa-col-red : rgb(240,100,100);
+$sa-col-red-dark : darken($sa-col-red, 20%);
+
+$sa-col-green : rgb(144,238,144);
+$sa-col-green-dark : darken($sa-col-green, 20%);
+
+$sa-col-yellow : rgb(255,228,181);
+$sa-col-yellow-dark : darken($sa-col-yellow, 20%);
+
+$sa-col-blue : rgb(173,216,230);
+$sa-col-blue-dark : darken($sa-col-blue, 20%);
+
+
+/* ============================================================
+  DEMO STYLES
+============================================================ */
+.demo-section {
+  margin-bottom: 20px;
+}
+.demo-section__title {
+  font-family: $font-secondary;
+  font-size: 30px;
+}
+
+
+/* ============================================================
+  SIMPLE ALERT MODULE
+============================================================ */
+
+/**
+ * Simple alert styles.
+ *
+ * These are all the styles for our simple alerts. They
+ * contain the simple alert container, the alert content,
+ * and a dismiss button. Simple alerts should be generated
+ * by JavaScript, so here's some example HTML to demonstrate
+ * how the JS should output.
+
+ * Example HTML:
+ *
+ * <div class="simple-alert TYPE">
+ *   <span class="simple-alert__content"></span>
+ *   <a href="#" class="simple-alert__dismiss"></a>
+ * </div>
+ *
+ * In TYPE, "TYPE" referes to either
+ * error, success, warning, or default.
+ */
+
+/**
+ * The simple alert container
+ *
+ * This is the bounding box for our simple 
+ * alert.
+ *
+ * 1. This is only for the aesthetics of this tutorial.
+ */
+.simple-alert {
+  display: inline-block;
+  position: relative;
+  margin: 0 5px 5px 0; /* 1 */
+  padding: 5px 45px 5px 5px;
+}
+
+/**
+ * Simple alert types.
+ *
+ * Four types, distinguishable by colour:
+ *   - error
+ *   - success
+ *   - warning
+ *   - default
+ */
+.simple-alert.error {
+  background-color: $sa-col-red;
+  border: solid 1px $sa-col-red-dark;
+}
+.simple-alert.success {
+  background-color: $sa-col-green;
+  border: solid 1px $sa-col-green-dark;
+}
+.simple-alert.warning {
+  background-color: $sa-col-yellow;
+  border: solid 1px $sa-col-yellow-dark;
+}
+.simple-alert.default {
+  background-color: $sa-col-blue;
+  border: solid 1px $sa-col-blue-dark;
+}
+
+/**
+ * Simplae alert content.
+ *
+ * Style the content with a semi-transparent
+ * black colour so it inherits the background 
+ * of the alert type.
+ */
+.simple-alert__content {
+  color: rgba(0,0,0,0.5);
+}
+
+/**
+ * Simple alert dismiss.
+ *
+ * This is the dismiss button for our simple alert.
+ * When the user clicks this, our alert should go
+ * away.
+ */
+.simple-alert__dismiss {
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  margin: auto 0;
+  width: 20px;
+  height: 20px;
+  background-image: url('../img/close.png');
+  font-size: 0;
+  text-indent: -9999px;
+}

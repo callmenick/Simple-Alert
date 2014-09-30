@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+  <!-- title and meta -->
+  <meta charset="utf-8">
+  <meta content="width=device-width,initial-scale=1.0" name="viewport">
+  <meta content="Here's part 2 of a 2-part tutorial that dives into JavaScript objects, prototype programming, and building a simple reusable JavaScript component." name="description">
+
+  <title>Simple Alert Demo - JavaScript Objects &amp; Building A JavaScript Component – Part 2</title>
+
+  <!-- css -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- js -->
+  <script src="js/modernizr.js"></script>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <header class="primary-header clearfix">
+    <div class="logo">
+      <a href="http://www.callmenick.com">
+        <img src="img/core/logo.svg" onerror="this.src=logo.png" alt="Call Me Nick - Tutorials, Resources, &amp; Articles for Web Design &amp; Web Development">
+      </a>
+    </div>
+    <nav class="primary-nav">
+      <a class="icon cmn-tut" data-title="Back To Tutorial" href="http://www.callmenick.com/?p=797"></a>
+      <a class="icon cmn-prev" data-title="Pevious Demo - HTML5 Video Jumpstart With Examples" href="http://callmenick.com/tutorial-demos/html5-video/"></a>
+      <a class="icon cmn-download" data-title="Download Source" href="http://www.callmenick.com/tutorial-demos/simple-alert/simple-alert-source.zip"></a>
+      <a class="icon cmn-archive" data-title="Tutorial Archives" href="http://www.callmenick.com/category/tutorials/"></a>
+    </nav>
+  </header><!-- /.primary-header -->
+
+  <main>
+    <div class="container">
+      
+      <section class="demo-section">
+        <h1 class="demo-section__title">Simple Alert Demo</h1>
+      </section>
+
+      <section class="demo-section" id="buttons">
+        <button id="simple-alert__button--error">Show Me An Error Alert</button>
+        <button id="simple-alert__button--success">Show Me A Success Alert</button>
+        <button id="simple-alert__button--warning">Show Me A Warning Alert</button>
+        <button id="simple-alert__button--default">Show Me A Default Alert</button>
+      </section>
+
+      <section class="demo-section" id="alerts"></section>
+
+    </div>
+  </main><!-- /main -->
+  
+</div><!-- /#wrapper -->
+
+<!-- ads -->
+<script src="js/fusionad.js"></script>
+
+<!-- js -->
+<script src="js/simplealert.js"></script>
+<script>
+  ( function() {
+    // cache vars
+    var btn_error = document.getElementById("simple-alert__button--error"),
+        btn_success = document.getElementById("simple-alert__button--success"),
+        btn_warning = document.getElementById("simple-alert__button--warning"),
+        btn_default = document.getElementById("simple-alert__button--default");
+
+    // show error
+    btn_error.addEventListener( "click", function(e) {
+      e.preventDefault();
+      var sa = new SimpleAlert({
+        wrapper : document.getElementById("alerts"),
+        type : "error",
+        message : "Show me an error!"
+      });
+      sa.show();
+    });
+
+    // show success
+    btn_success.addEventListener( "click", function(e) {
+      e.preventDefault();
+      var sa = new SimpleAlert({
+        wrapper : document.getElementById("alerts"),
+        type : "success",
+        message : "Show me the money!"
+      });
+      sa.show();
+    });
+
+    // show warning
+    btn_warning.addEventListener( "click", function(e) {
+      e.preventDefault();
+      var sa = new SimpleAlert({
+        wrapper : document.getElementById("alerts"),
+        type : "warning",
+        message : "Halt...You forgot something!"
+      });
+      sa.show();
+    });
+
+    // show default
+    btn_default.addEventListener( "click", function(e) {
+      e.preventDefault();
+      var sa = new SimpleAlert({
+        wrapper : document.getElementById("alerts"),
+        type : "default",
+        message : "I'm a boring default message :("
+      });
+      sa.show();
+    });
+
+  })();
+</script>
+
+<!-- analytics -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-34160351-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+</body>
+</html>

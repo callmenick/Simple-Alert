@@ -1,0 +1,110 @@
+/* ============================================================
+  DEMO STYLES
+============================================================ */
+.demo-section {
+  margin-bottom: 20px;
+}
+
+.demo-section__title {
+  font-family: "Roboto Slab", serif;
+  font-size: 30px;
+}
+
+/* ============================================================
+  SIMPLE ALERT MODULE
+============================================================ */
+/**
+ * Simple alert styles.
+ *
+ * These are all the styles for our simple alerts. They
+ * contain the simple alert container, the alert content,
+ * and a dismiss button. Simple alerts should be generated
+ * by JavaScript, so here's some example HTML to demonstrate
+ * how the JS should output.
+
+ * Example HTML:
+ *
+ * <div class="simple-alert TYPE">
+ *   <span class="simple-alert__content"></span>
+ *   <a href="#" class="simple-alert__dismiss"></a>
+ * </div>
+ *
+ * In TYPE, "TYPE" referes to either
+ * error, success, warning, or default.
+ */
+/**
+ * The simple alert container
+ *
+ * This is the bounding box for our simple 
+ * alert.
+ *
+ * 1. This is only for the aesthetics of this tutorial.
+ */
+.simple-alert {
+  display: inline-block;
+  position: relative;
+  margin: 0 5px 5px 0;
+  /* 1 */
+  padding: 5px 45px 5px 5px;
+}
+
+/**
+ * Simple alert types.
+ *
+ * Four types, distinguishable by colour:
+ *   - error
+ *   - success
+ *   - warning
+ *   - default
+ */
+.simple-alert.error {
+  background-color: #f06464;
+  border: solid 1px #d91515;
+}
+
+.simple-alert.success {
+  background-color: lightgreen;
+  border: solid 1px #38e038;
+}
+
+.simple-alert.warning {
+  background-color: moccasin;
+  border: solid 1px #ffbf4f;
+}
+
+.simple-alert.default {
+  background-color: lightblue;
+  border: solid 1px #5fb3ce;
+}
+
+/**
+ * Simplae alert content.
+ *
+ * Style the content with a semi-transparent
+ * black colour so it inherits the background 
+ * of the alert type.
+ */
+.simple-alert__content {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/**
+ * Simple alert dismiss.
+ *
+ * This is the dismiss button for our simple alert.
+ * When the user clicks this, our alert should go
+ * away.
+ */
+.simple-alert__dismiss {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto 0;
+  width: 20px;
+  height: 20px;
+  background-image: url("../img/close.png");
+  font-size: 0;
+  text-indent: -9999px;
+}
