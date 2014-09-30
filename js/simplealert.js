@@ -44,7 +44,7 @@
   /**
    * SimpleAlert options Object
    *
-   * @param {string} wrapper - The wrapper to append alerts to.
+   * @type {HTMLElement} wrapper - The wrapper to append alerts to.
    * @param {string} type - The type of alert.
    * @param {string} message - The alert message.
    */
