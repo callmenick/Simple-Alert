@@ -33,7 +33,7 @@
   /**
    * SimpleAlert
    *
-   * @param {Object} options - The options object
+   * @param {object} options - The options object
    */
   function SimpleAlert( options ) {
     this.options = extend( {}, this.options );
@@ -59,6 +59,9 @@
    *
    * This is the initializer function. It builds the HTML and gets the alert
    * ready for showing.
+   *
+   * @type {HTMLElement} this.sa - The Simple Alert div
+   * @param {string} strinner - The inner HTML for our alert
    */
   SimpleAlert.prototype._init = function() {
     // create element
@@ -82,6 +85,8 @@
    *
    * This is our events function, and its sole purpose is to listen for
    * any events inside our Simple Alert.
+   *
+   * @type {HTMLElement} btn_dismiss - The dismiss-alert button
    */
   SimpleAlert.prototype._events = function() {
     // cache vars
